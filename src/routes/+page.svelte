@@ -89,7 +89,7 @@
     <div class="content" bind:this={terminalDiv} on:scroll={handleScroll}>
         {#each lines as line (line.timestamp + line.content)}
             <div class="line" class:system={line.type === 'system'} transition:fade={{ duration: 150 }}>
-                <span class="timestamp">{new Date(line.timestamp).toLocaleTimeString()}</span>
+                <span class="timestamp">{new Date(line.timestamp + 'z').toLocaleTimeString()}</span>
                 <span class="line-content">{line.content}</span>
             </div>
         {/each}
